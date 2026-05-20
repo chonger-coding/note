@@ -1,0 +1,63 @@
+--------------------------------------------
+__init__
+__dict__
+__class__
+__mro__
+__call__ 
+__str__
+__len__
+__lt__
+__gt__
+__eq__
+__getattr__
+__closure__
+__annotations__
+__all__
+__name__
+__file__
+__iter__ iter()
+__next__ next()
+__enter__
+__exit__
+
+self,cls
+@classmethod
+@staticmethod 和@classmetho比不能使用self和cls参数访问变量
+@abstractmethod ABC pass 抽象类中没有@abstractmethod修饰的抽象方法是可以实例化的
+@property
+lambda x,y:x+y
+try except else finally raise
+global
+nonlocal在可变对象添加元素时可以不写，重新赋值或是不可变对象时必须写
+super()不需要加self，super()在多继承的时候永远返回继承的第一个类
+对象调用方法或获取属性时，先在对象上查找，然后再去类中查找，然后再去父类中查找
+类调用实例方法也是可以的，只是不推荐，因为调用的时候还是需要在第一个参数的位置传一个实例对象作为self参数。对象调用类方法和静态方法也是可以的，但是不推荐
+__开头的私有属性只能在类内部访问的实现方式是对属性做了"_类名__属性名"的重命名，所以也可以通过"_类名__属性名"访问，只是不推荐
+基础类型的变量值也是对应类型的对象。函数是function类型的对象，也可以动态添加属性。函数可以赋值给变量，可以作为参数，也可以作为返回值，可以"()()"调用
+打包解包
+闭包之间互不影响
+map,filter函数是惰性计算的，且返回的是迭代器对象，只能迭代一次
+虚拟环境使用全局环境的标准库和自己的第三方库，而且不能用全局的第三方库
+#region #endregion
+生成器表达式和列表推导式的区别是前者必须是()
+file对象也是可迭代对象，可以直接for循环，每次获取一行
+-------------------------------------
+multiprocess Process() Lock() Rlock() Pool() ProcessPoolExecutor() Future() as_completed() add_done_callback() Queue() Pipe() join() terminate()
+threading.Thread threading.current_thread().name join() setDeamon(True) lock=threading.Lock() lock.acquire() lock.release() ThreadPoolExecutor() as_completed() Queue()线程安全的
+terminate()终止进程时和java多线程不一样，之后的finally不会执行
+基本类型、列表等变量在多进程间是不共享的，但是Lock、Queue等有些类型对象是跨进程的
+-------------------------------------
+'''多行注释'''其实本质就是字符串，只是解释器用不到，所以可以当做注释
+集合set中必须都是不可变元素，因为需要通过内容计算hash值，而且不能通过while循环遍历。但是元组tuple中可以插入列表等可变对象，因为元组不依赖元素内容的hash值，只保证序列不可变
+list(),tuple(),set(),dict(),str()
+[[1,2]] * 10  和 [[1,2] for _ in rang(10)] 的区别
+a,b,c ='a-b-c'.split('-')
+
+-------------------------------------
+__init__.py
+pip install -i https://mirrors.aliyun.com/pypi/simple numpy
+pip config set global.index-url https://mirrors.aliyun.com/pypi/simple
+pip config list
+pip list
+pip uninstall
+activate deactivate
